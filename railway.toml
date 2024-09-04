@@ -6,6 +6,9 @@ buildCommand = "npm run build"
 startCommand = "npm run start"
 healthcheckPath = "/healthz"
 healthcheckTimeout = 300
+healthcheckInterval = 15
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 5
 
 [deploy.envs]
 NODE_ENV = "production"
