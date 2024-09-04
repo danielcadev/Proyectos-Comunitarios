@@ -1,23 +1,27 @@
-'use strict';
-
 module.exports = {
+  /**
+   * An asynchronous register function that runs before
+   * your application is initialized.
+   *
+   * This gives you an opportunity to extend code.
+   */
   register({ strapi }) {
-    console.log('Registering middlewares...');
     strapi.server.use(async (ctx, next) => {
       if (ctx.path === '/healthz') {
-        console.log('Health check requested');
-        ctx.body = 'OK';
         ctx.status = 200;
+        ctx.body = 'OK';
       } else {
         await next();
       }
     });
-    console.log('Middlewares registered');
   },
 
-  async bootstrap({ strapi }) {
-    console.log('Starting bootstrap process...');
-    // Tu lógica de bootstrap existente, si la hay
-    console.log('Bootstrap process completed');
-  },
+  /**
+   * An asynchronous bootstrap function that runs before
+   * your application gets started.
+   *
+   * This gives you an opportunity to set up your data model,
+   * run jobs, or perform some special logic.
+   */
+  bootstrap({ strapi }) {},
 };
