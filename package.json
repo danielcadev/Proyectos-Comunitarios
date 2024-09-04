@@ -5,10 +5,10 @@
   "description": "A Strapi application",
   "scripts": {
     "develop": "strapi develop",
-    "start": "strapi start",
+    "start": "node -e \"console.log('Node version:', process.version); console.log('Environment:', process.env); require('@strapi/strapi').start();\"",
     "build": "strapi build",
     "strapi": "strapi",
-    "deploy": "strapi deploy"
+    "deploy": "strapi deploy" 
   },
   "dependencies": {
     "@strapi/plugin-cloud": "4.25.9",
