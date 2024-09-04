@@ -9,14 +9,5 @@ module.exports = [
   'strapi::session',
   'strapi::favicon',
   'strapi::public',
-  {
-    name: 'strapi::healthcheck',
-    config: {
-      path: '/healthz',
-      callback: (ctx) => {
-        ctx.response.status = 200;
-        ctx.response.body = 'OK';
-      },
-    },
-  },
+  'strapi::healthcheck'
 ];
