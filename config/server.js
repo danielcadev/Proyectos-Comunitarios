@@ -7,4 +7,11 @@ module.exports = ({ env }) => ({
   webhooks: {
     populateRelations: env.bool('WEBHOOKS_POPULATE_RELATIONS', false),
   },
+  settings: {
+    i18n: {
+      enabled: true,
+      locales: ['es', 'en'], // Ajusta según tus necesidades
+      defaultLocale: 'es',
+    },
+  }
 });
