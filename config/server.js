@@ -1,6 +1,7 @@
 module.exports = ({ env }) => ({
   host: env('HOST', '0.0.0.0'),
-  port: env.int('PORT', 1337),
+  port: env.int('PORT', process.env.PORT || 1337),
+  url: env('PUBLIC_URL', 'https://proyectos-comunitarios.vercel.app/'), 
   app: {
     keys: env.array('APP_KEYS'),
   },
@@ -10,7 +11,7 @@ module.exports = ({ env }) => ({
   settings: {
     i18n: {
       enabled: true,
-      locales: ['es', 'en'], // Ajusta según tus necesidades
+      locales: ['es', 'en'],
       defaultLocale: 'es',
     },
   }
