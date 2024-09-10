@@ -1,10 +1,18 @@
 {
-    "buildCommand": "npm run build",
-    "outputDirectory": "dist",
-    "devCommand": "npm run develop",
-    "installCommand": "npm install",
-    "framework": "strapi",
-    "rewrites": [
-      { "source": "/(.*)", "destination": "/index.js" }
-    ]
+    "version": 2,
+    "builds": [
+      {
+        "src": "config/functions/bootstrap.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "config/functions/bootstrap.js"
+      }
+    ],
+    "env": {
+      "NODE_ENV": "production"
+    }
   }
